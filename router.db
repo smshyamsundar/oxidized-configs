@@ -1,3 +1,1 @@
-192.0.x.x:cisco:nexus
-192.0.x.x:ios
-router.example.com:procurve
+# name:ip:model:group
