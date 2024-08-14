@@ -1,0 +1,568 @@
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: mdf1.82swft-2fl
+# Model: ex2300-c-12p
+# Junos: 21.4R3-S3.4
+# JUNOS OS Kernel 32-bit  [20230120.f3fd182_builder_stable_12_214]
+# JUNOS OS libs [20230120.f3fd182_builder_stable_12_214]
+# JUNOS OS runtime [20230120.f3fd182_builder_stable_12_214]
+# JUNOS OS time zone information [20230120.f3fd182_builder_stable_12_214]
+# JUNOS py extensions [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS py base [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS OS crypto [20230120.f3fd182_builder_stable_12_214]
+# JUNOS OS boot-ve files [20230120.f3fd182_builder_stable_12_214]
+# JUNOS network stack and utilities [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS libs [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS runtime [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS na telemetry [21.4R3-S3.4]
+# JET app mxoc-pyagent [0.1.131]
+# JUNOS Web Management Platform Package [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS ex runtime [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS Routing aggregated [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS probe utility [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS ex platform support [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS Openconfig [21.4R3-S3.4]
+# JUNOS dcp network modules [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS modules [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS ex modules [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS ex libs [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS ex Data Plane Crypto Support [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS daemons [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS SDN Software Suite [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS Extension Toolkit [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS Phone-home [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS Packet Forwarding Engine Support (EX34XX) [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS jdocs ex [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS jail runtime [20230120.f3fd182_builder_stable_12_214]
+# JUNOS FIPS mode utilities [20230308.221111_builder_junos_214_r3_s3]
+# JUNOS dsa dsa [21.4R3-S3.4]
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                HV3619190271      EX2300-C-12P
+# Pseudo CB 0
+# Routing Engine 0          BUILTIN      BUILTIN           RE-EX2300C-12P
+# FPC 0            REV 18   650-059984   HV3619190271      EX2300-C-12P
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0          REV 18   BUILTIN      BUILTIN           12x10/100/1000 Base-T
+#   PIC 1          REV 18   650-059984   HV3619190271      2x10G SFP/SFP+
+# Power Supply 0                                           JPSU-170W-AC
+# License usage: none
+# 
+# Licenses installed: none
+# 
+## Last commit: 2024-08-13 05:39:38 PDT by dtsai
+version 21.4R3-S3.4;
+groups {
+    INTERFACE_BACKBONE_DEFAULTS {
+        interfaces {
+            "<[aegx][et]*>" {
+                mtu 9216;
+            }
+        }
+    }
+}
+system {
+    host-name mdf1.82swft-2fl;
+    root-authentication { /* ACCESS-DENIED */ };
+    commit synchronize;
+    scripts { /* ACCESS-DENIED */ };
+    login { /* ACCESS-DENIED */ };
+    services {
+        ssh {
+            root-login /* ACCESS-DENIED */;
+            protocol-version /* ACCESS-DENIED */;
+            max-sessions-per-connection /* ACCESS-DENIED */;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    domain-name irv1.local;
+    time-zone America/Los_Angeles;
+    arp {
+        aging-timer 5;
+    }
+    authentication-order password;
+    name-server {
+        1.1.1.1;
+        208.67.220.220;
+    }
+    syslog {
+        archive size 3m files 3 world-readable;
+        user * {
+            any emergency;
+        }
+        file escript.log {
+            archive size 2m files 5;
+        }
+        file interactive-commands {
+            interactive-commands any;
+            match "!(.*mist.*)";
+            archive size 2m files 5;
+        }
+        file interface_status {
+            daemon info;
+            match "(SNMP_TRAP_LINK_UP|SNMP_TRAP_LINK_DOWN)";
+            archive size 200k files 3;
+            explicit-priority;
+        }
+        file messages {
+            any any;
+            authorization any;
+            archive size 2m files 5;
+        }
+        file op-script.log {
+            archive size 2m files 5;
+        }
+        file snapshot {
+            archive size 2m files 5;
+        }
+        time-format year;
+    }
+    max-configurations-on-flash 20;
+    processes {
+        dhcp-service {
+            traceoptions {
+                file dhcp_logfile size 10m;
+                level all;
+                flag all;
+            }
+        }
+    }
+    ntp {
+        server 216.239.35.4;
+    }
+}
+chassis {
+    redundancy {
+        graceful-switchover;
+    }
+    alarm {
+        management-ethernet {
+            link-down ignore;
+        }
+    }
+}
+interfaces {
+    apply-groups INTERFACE_BACKBONE_DEFAULTS;
+    ge-0/0/0 {
+        description MIKROTIK_;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members [ 191-193 196-197 2193-2194 ];
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/1 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/2 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/3 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/4 {
+        description idf2.82swft-1fl_switch;
+        native-vlan-id 2193;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/5 {
+        description OFFICE;
+        native-vlan-id 196;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/6 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/7 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/8 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/9 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/10 {
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members 2193;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/11 {
+        description "ARUBA AP - 802.11bt SW";
+        native-vlan-id 196;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/1/0 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/1/0 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    ge-0/1/1 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/1/1 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    irb {
+        unit 0 {
+            family inet {
+                dhcp {
+                    lease-time infinite;
+                    vendor-id ex2300c-mdf-2193;
+                }
+            }
+        }
+    }
+}
+snmp {
+    location "IRVINE, CA";
+    contact "dt@siriuspackets.com";
+    filter-interfaces {
+        all-internal-interfaces;
+    }
+    v3 {
+        usm {
+            local-engine {
+                user monitoruser {
+                    authentication-sha {
+                        authentication-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                    privacy-aes128 {
+                        privacy-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                }
+            }
+        }
+        vacm {
+            security-to-group {
+                security-model usm {
+                    security-name monitoruser {
+                        group ro-group;
+                    }
+                }
+            }
+            access {
+                group ro-group {
+                    default-context-prefix {
+                        security-model usm {
+                            security-level privacy {
+                                read-view all;
+                                write-view all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    view all {
+        oid .1 include;
+    }
+    health-monitor {
+        interval 300;
+        rising-threshold 80;
+        falling-threshold 70;
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+event-options { /* ACCESS-DENIED */ };
+class-of-service {
+    shared-buffer {
+        percent 100;
+    }
+}
+routing-options {
+    forwarding-table {
+        ecmp-fast-reroute;
+    }
+}
+protocols {
+    l2-learning {
+        global-mac-table-aging-time 600;
+        global-mac-ip-table-aging-time 300;
+    }
+    lldp {
+        interface all {
+            power-negotiation;
+        }
+    }
+    lldp-med {
+        interface all {
+            location {
+                civic-based {
+                    country-code US;
+                }
+            }
+        }
+    }
+    igmp-snooping {
+        vlan default {
+            immediate-leave;
+        }
+        vlan all {
+            immediate-leave;
+        }
+    }
+    layer2-control {
+        bpdu-block {
+            disable-timeout 300;
+        }
+    }
+    rstp {
+        bridge-priority 4k;
+        interface all {
+            no-root-port;
+        }
+        bpdu-block-on-edge;
+    }
+}
+switch-options {
+    interface-shutdown-action soft-shutdown;
+}
+poe {
+    interface all {
+        priority high;
+        telemetries;
+    }
+}
+vlans {
+    HELIUM_RADIO1 {
+        description FREEDOMFI_PORT1;
+        vlan-id 193;
+    }
+    HELIUM_RADIO2 {
+        description FREEDOMFI_PORT2;
+        vlan-id 192;
+    }
+    HELIUM_RADIO3 {
+        description FREEDOMFI_PORT3;
+        vlan-id 191;
+    }
+    ISP_ATT {
+        description NET-192-0-0-0;
+        vlan-id 2193;
+        inactive: forwarding-options {
+            dhcp-security {
+                group trusted-group {
+                    overrides {
+                        trusted;
+                    }
+                    interface ge-0/0/0.0;
+                }
+                group untrusted-group {
+                    overrides {
+                        untrusted;
+                    }
+                    interface ge-0/0/1.0;
+                    interface ge-0/0/2.0;
+                    interface ge-0/0/3.0;
+                    interface ge-0/0/4.0;
+                    interface ge-0/0/5.0;
+                    interface ge-0/0/6.0;
+                    interface ge-0/0/7.0;
+                    interface ge-0/0/8.0;
+                    interface ge-0/0/9.0;
+                    interface ge-0/0/10.0;
+                    interface ge-0/0/11.0;
+                }
+            }
+        }
+    }
+    ISP_COX {
+        description NET-184-180-222-0;
+        vlan-id 2194;
+        forwarding-options {
+            dhcp-security {
+                group trusted-group {
+                    overrides {
+                        trusted;
+                    }
+                    interface ge-0/0/0.0;
+                }
+                group untrusted-group {
+                    overrides {
+                        untrusted;
+                    }
+                    interface ge-0/0/1.0;
+                    interface ge-0/0/2.0;
+                    interface ge-0/0/3.0;
+                    interface ge-0/0/4.0;
+                    interface ge-0/0/5.0;
+                    interface ge-0/0/6.0;
+                    interface ge-0/0/7.0;
+                    interface ge-0/0/8.0;
+                    interface ge-0/0/9.0;
+                    interface ge-0/0/10.0;
+                    interface ge-0/0/11.0;
+                }
+            }
+        }
+    }
+    LAN_DEFAULT {
+        description NET-198-18-255-0;
+        vlan-id 199;
+        forwarding-options {
+            dhcp-security {
+                group trusted-group {
+                    overrides {
+                        trusted;
+                    }
+                    interface ge-0/0/0.0;
+                }
+                group untrusted-group {
+                    overrides {
+                        untrusted;
+                    }
+                }
+            }
+        }
+    }
+    LAN_MGMT {
+        description NET-198-18-252-0;
+        vlan-id 196;
+        l3-interface irb.0;
+    }
+    LAN_PRIVATE {
+        description NET-198-18-253-0;
+        vlan-id 197;
+        forwarding-options {
+            dhcp-security {
+                group trusted-group {
+                    overrides {
+                        trusted;
+                    }
+                }
+                group untrusted-group {
+                    overrides {
+                        untrusted;
+                    }
+                }
+            }
+        }
+    }
+    LAN_VMKERNEL {
+        description NET-198-18-254-0;
+        vlan-id 198;
+    }
+    LAN_VSPHERE {
+        description NET-198-18-251-0;
+        vlan-id 194;
+    }
+    SDWAN {
+        description NET-172-16-8-0;
+        vlan-id 195;
+    }
+}

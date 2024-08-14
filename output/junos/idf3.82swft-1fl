@@ -1,0 +1,836 @@
+# fpc0:
+# --------------------------------------------------------------------------
+# Hostname: idf3.82swft-1fl
+# Model: ex4300-48p
+# Junos: 21.4R3-S6.5
+# JUNOS EX  Software Suite [21.4R3-S6.5]
+# JUNOS FIPS mode utilities [21.4R3-S6.5]
+# JUNOS Crypto Software Suite [21.4R3-S6.5]
+# JUNOS Online Documentation [21.4R3-S6.5]
+# JUNOS Phone-Home Software Suite [21.4R3-S6.5]
+# JUNOS jsd [powerpc-21.4R3-S6.5-jet-1]
+# JUNOS SDN Software Suite [21.4R3-S6.5]
+# JUNOS EX 4300 Software Suite [21.4R3-S6.5]
+# JUNOS py-base-powerpc [21.4R3-S6.5]
+# JUNOS py-extensions-powerpc [21.4R3-S6.5]
+# REST API Software Suite [21.4R3-S6.5]
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                PD3119010710      EX4300-48P
+# Routing Engine 0 REV 39   650-044930   PD3119010710      EX4300-48P
+# FPC 0            REV 39   650-044930   PD3119010710      EX4300-48P
+#   CPU                     BUILTIN      BUILTIN           FPC CPU
+#   PIC 0          REV 39   BUILTIN      BUILTIN           48x 10/100/1000 Base-T
+#   PIC 1          REV 39   BUILTIN      BUILTIN           4x 40GE QSFP+
+#   PIC 2          REV 02   611-063980   MY3719100074      4x 1G/10G SFP/SFP+
+#     Xcvr 0                NON-JNPR     AVD2305A6U8       SFP+-10G-SR
+#     Xcvr 1                NON-JNPR     AVD2305A6UV       SFP+-10G-SR
+#     Xcvr 2                NON-JNPR     ACW231406N4       SFP+-10G-SR
+# Power Supply 0   REV 03   740-046871   1EDA8468811       JPSU-1100-AC-AFO-A
+# Power Supply 1   REV 03   740-046871   1EDA8480914       JPSU-1100-AC-AFO-A
+# Fan Tray 0                                               Fan Module, Airflow Out (AFO)
+# Fan Tray 1                                               Fan Module, Airflow Out (AFO)
+# License usage: none
+# 
+# Licenses installed: none
+# 
+## Last commit: 2024-08-13 05:40:04 PDT by dtsai
+version 21.4R3-S6.5;
+groups {
+    INTERFACE_BACKBONE_DEFAULTS {
+        interfaces {
+            "<[aegx][et]*>" {
+                mtu 9216;
+            }
+        }
+    }
+    phcd_user_script {
+        system {
+            scripts { /* ACCESS-DENIED */ };
+        }
+    }
+}
+apply-groups phcd_user_script;
+system {
+    host-name idf3.82swft-1fl;
+    root-authentication { /* ACCESS-DENIED */ };
+    commit synchronize;
+    scripts { /* ACCESS-DENIED */ };
+    login { /* ACCESS-DENIED */ };
+    services {
+        ssh {
+            root-login /* ACCESS-DENIED */;
+            protocol-version /* ACCESS-DENIED */;
+            max-sessions-per-connection /* ACCESS-DENIED */;
+            connection-limit 4;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    auto-snapshot;
+    domain-name irv1.local;
+    time-zone America/Los_Angeles;
+    arp {
+        aging-timer 5;
+    }
+    authentication-order password;
+    name-server {
+        1.1.1.1;
+        208.67.220.220;
+    }
+    syslog {
+        archive size 3m files 3 world-readable;
+        user * {
+            any emergency;
+        }
+        file escript.log {
+            archive size 2m files 5;
+        }
+        file interactive-commands {
+            interactive-commands any;
+            match "!(.*mist.*)";
+            archive size 2m files 5;
+        }
+        file interface_status {
+            daemon info;
+            match "(SNMP_TRAP_LINK_UP|SNMP_TRAP_LINK_DOWN)";
+            archive size 200k files 3;
+            explicit-priority;
+        }
+        file messages {
+            any any;
+            authorization any;
+            archive size 2m files 5;
+        }
+        file snapshot {
+            archive size 2m files 5;
+        }
+        time-format year;
+    }
+    max-configurations-on-flash 20;
+    processes {
+        dhcp-service {
+            traceoptions {
+                file dhcp_logfile size 10m;
+                level all;
+                flag all;
+            }
+        }
+    }
+    ntp {
+        server 216.239.35.4;
+        server 192.12.19.20;
+    }
+}
+chassis {
+    redundancy {
+        graceful-switchover;
+    }
+    alarm {
+        management-ethernet {
+            link-down ignore;
+        }
+    }
+}
+interfaces {
+    apply-groups INTERFACE_BACKBONE_DEFAULTS;
+    ge-0/0/0 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/1 {
+        description MIKROTIK_P4;
+        native-vlan-id 2193;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode trunk;
+                vlan {
+                    members all;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/2 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/3 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/4 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/5 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/6 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/7 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/8 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/9 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/10 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/11 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/12 {
+        description HELIUM_WIFI;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members LAN_PRIVATE;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/13 {
+        description FREEDOMFI_GATEWAY;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members LAN_MGMT;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/14 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/15 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/16 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/17 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/18 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/19 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/20 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/21 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/22 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/23 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/24 {
+        description FREEDOMFI_GATEWAY_NBE1;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members HELIUM_RADIO1;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/25 {
+        description HELIUM_430H_R1;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members HELIUM_RADIO1;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/26 {
+        description HELIUM_430H_R2;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members HELIUM_RADIO1;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/27 {
+        description HELIUM_430H_R3;
+        mtu 1532;
+        unit 0 {
+            family ethernet-switching {
+                interface-mode access;
+                vlan {
+                    members HELIUM_RADIO1;
+                }
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/28 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/29 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/30 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/31 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/32 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/33 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/34 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/35 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/36 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/37 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/38 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/39 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/40 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/41 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/42 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/43 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/44 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/45 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/46 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/0/47 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+                recovery-timeout 600;
+            }
+        }
+    }
+    ge-0/2/0 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/2/0 {
+        disable;
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    ge-0/2/1 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/2/1 {
+        disable;
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    ge-0/2/2 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/2/2 {
+        disable;
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    ge-0/2/3 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    xe-0/2/3 {
+        unit 0 {
+            family ethernet-switching {
+                storm-control default;
+            }
+        }
+    }
+    irb {
+        unit 0 {
+            description MANAGEMENT;
+            family inet {
+                address 198.18.252.8/24;
+            }
+            family inet6 {
+                dhcpv6-client {
+                    client-type stateful;
+                    client-ia-type ia-na;
+                    client-identifier duid-type duid-ll;
+                }
+            }
+        }
+    }
+}
+snmp {
+    location "IRVINE, CA";
+    contact "dt@siriuspackets.com";
+    filter-interfaces {
+        all-internal-interfaces;
+    }
+    v3 {
+        usm {
+            local-engine {
+                user monitoruser {
+                    authentication-sha {
+                        authentication-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                    privacy-aes128 {
+                        privacy-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                }
+            }
+        }
+        vacm {
+            security-to-group {
+                security-model usm {
+                    security-name monitoruser {
+                        group ro-group;
+                    }
+                }
+            }
+            access {
+                group ro-group {
+                    default-context-prefix {
+                        security-model usm {
+                            security-level privacy {
+                                read-view all;
+                                write-view all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    view all {
+        oid .1 include;
+    }
+    health-monitor {
+        interval 300;
+        rising-threshold 80;
+        falling-threshold 70;
+    }
+}
+forwarding-options {
+    storm-control-profiles default {
+        all;
+    }
+}
+event-options { /* ACCESS-DENIED */ };
+class-of-service {
+    shared-buffer {
+        percent 100;
+    }
+}
+routing-options {
+    static {
+        route 0.0.0.0/0 {
+            next-hop 198.18.252.1;
+            no-readvertise;
+        }
+    }
+    forwarding-table {
+        ##
+        ## Warning: statement ignored: unsupported platform (ex4300-48p)
+        ##
+        ecmp-fast-reroute;
+    }
+}
+protocols {
+    oam {
+        ethernet {
+            link-fault-management {
+                interface ge-0/0/25;
+                interface ge-0/0/26;
+                interface ge-0/0/27;
+            }
+        }
+    }
+    l2-learning {
+        global-mac-table-aging-time 600;
+        global-mac-ip-table-aging-time 300;
+    }
+    lldp {
+        interface all;
+    }
+    lldp-med {
+        interface all {
+            location {
+                civic-based {
+                    country-code US;
+                }
+            }
+        }
+    }
+    igmp-snooping {
+        vlan default {
+            immediate-leave;
+        }
+        vlan all {
+            immediate-leave;
+        }
+    }
+    mld-snooping {
+        vlan all {
+            immediate-leave;
+        }
+    }
+    layer2-control {
+        bpdu-block {
+            disable-timeout 300;
+        }
+    }
+    rstp {
+        bridge-priority 16k;
+        interface ge-0/0/1 {
+            disable;
+        }
+        interface all {
+            edge;
+            no-root-port;
+        }
+    }
+}
+switch-options {
+    interface-shutdown-action soft-shutdown;
+}
+poe {
+    lldp-priority;
+    interface all {
+        priority high;
+        telemetries {
+            interval 15;
+        }
+        high-power;
+    }
+}
+vlans {
+    HELIUM_RADIO1 {
+        description FREEDOMFI_PORT1;
+        vlan-id 193;
+    }
+    HELIUM_RADIO2 {
+        description FREEDOMFI_PORT2;
+        vlan-id 192;
+    }
+    HELIUM_RADIO3 {
+        description FREEDOMFI_PORT3;
+        vlan-id 191;
+    }
+    ISP_ATT {
+        description NET-192-0-0-0;
+        vlan-id 2193;
+    }
+    ISP_COX {
+        description NET-184-180-222-0;
+        vlan-id 2194;
+    }
+    LAN_DEFAULT {
+        description NET-198-18-255-0;
+        vlan-id 199;
+    }
+    LAN_MGMT {
+        description NET-198-18-252-0;
+        vlan-id 196;
+        l3-interface irb.0;
+    }
+    LAN_PRIVATE {
+        description NET-198-18-253-0;
+        vlan-id 197;
+    }
+    LAN_VMKERNEL {
+        description NET-198-18-254-0;
+        vlan-id 198;
+    }
+    LAN_VSPHERE {
+        description NET-198-18-251-0;
+        vlan-id 194;
+    }
+    SDWAN {
+        description NET-172-16-8-0;
+        vlan-id 195;
+    }
+}
+# 
+# Virtual Chassis ID: 99e4.5a84.52f1
+# Virtual Chassis Mode: Enabled
+#                                                 Mstr           Mixed Route Neighbor List
+# Member ID  Status   Serial No    Model          prio  Role      Mode  Mode ID  Interface
+# 0 (FPC 0)  Prsnt    PD3119010710 ex4300-48p     128   Master*      N  VC
+# 
+# Member ID for next new member: 1 (FPC 1)

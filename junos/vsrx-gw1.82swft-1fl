@@ -1,0 +1,1198 @@
+# Hostname: vSRX-GW1
+# Model: vSRX
+# Junos: 20.4R3-S7.2
+# JUNOS OS Kernel 64-bit  [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS libs [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS runtime [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS time zone information [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS libs compat32 [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS 32-bit compatibility [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS py extensions2 [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS py extensions [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS py base2 [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS py base [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS OS vmguest [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS crypto [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS OS boot-ve files [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS network stack and utilities [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS libs [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS libs compat32 [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS runtime [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS na telemetry [20.4R3-S7.2]
+# JUNOS Web Management Platform Package [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS vsrx modules [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx libs compat32 [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx runtime [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx platform support [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS common platform support [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS vsrx runtime [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS probe utility [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS pppoe [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS Openconfig [20.4R3-S7.2]
+# JUNOS mtx network modules [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS modules [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx libs [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS hsm [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx Data Plane Crypto Support [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS daemons [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS srx daemons [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS cloud init [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS SRX TVP AppQos Daemon [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS Extension Toolkit [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS Juniper Malware Removal Tool (JMRT) [1.0.0+20230421.174713_builder_junos_204_r3_s7]
+# JUNOS J-Insight [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS jfirmware [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS Online Documentation [20230421.174713_builder_junos_204_r3_s7]
+# JUNOS jail runtime [20230215.a8a1e0a_builder_stable_11-204ab]
+# JUNOS FIPS mode utilities [20230421.174713_builder_junos_204_r3_s7]
+# Hardware inventory:
+# Item             Version  Part number  Serial number     Description
+# Chassis                                7cfc5a6c81c4      VSRX
+# Midplane
+# System IO
+# Routing Engine                                           VSRX-2CPU-4G memory
+# FPC 0                     BUILTIN      BUILTIN           FPC
+#   PIC 0                                                  VSRX DPDK GE
+# Power Supply 0
+# License usage:
+#                                  Licenses     Licenses    Licenses    Expiry
+#   Feature name                       used    installed      needed
+#   appid-sig                             1            0           1    permanent
+#   av_key_sophos_engine                  1            0           1    invalid
+#   wf_key_websense_ewf                   1            0           1    invalid
+#   Virtual Appliance                     1            1           0    permanent
+#   remote-access-ipsec-vpn-client        0            2           0    permanent
+#   remote-access-juniper-std             0            2           0    permanent
+# 
+# Licenses installed:
+#   License identifier: DemolabJUNOS344416101
+#   License version: 4
+#   Software Serial Number: 44400202-818cS
+#   Customer ID: Juniper Internal
+#   Features:
+#     appid-sig        - APPID Signature
+#       date-based, 2023-03-12 17:00:00 PDT - 2024-03-12 17:00:00 PDT
+# 
+#   License identifier: DemolabJUNOS412580604
+#   License version: 4
+#   Software Serial Number: 44400202-818cS
+#   Customer ID: Juniper Internal
+#   Features:
+#     idp-sig          - IDP Signature
+#       date-based, 2023-03-12 17:00:00 PDT - 2024-03-12 17:00:00 PDT
+# 
+#   License identifier: DemolabJUNOS862042208
+#   License version: 4
+#   Software Serial Number: 44400202-818cS
+#   Customer ID: Juniper Internal
+#   Features:
+#     Virtual Appliance - Virtual Appliance
+#       date-based, 2023-03-12 17:00:00 PDT - 2024-03-12 17:00:00 PDT
+# 
+#   License identifier: JUNOS1020673
+#   License version: 4
+#   Software Serial Number: 91730A00317976
+#   Customer ID: LABjuniper
+#   Features:
+#     Virtual Appliance - Virtual Appliance
+#       permanent
+# 
+# 
+# DemolabJUNOS344416101 aeaqic agajb4 xzonkm fq4nbu gqydam rqgiwt qmjymn jqyeck ovxgs4 dfoiqe s3tumv zg4ylm a4ujpz zqtr4t sewsmm yau6pq oyxi75 jrhhgf 7kvvsb treyud a3psd2 y4oa6y b34i4z er4bq
+# 
+# 
+# DemolabJUNOS412580604 aeaqic agaio4 xzonkm fq4nbu gqydam rqgiwt qmjymn jqyeck ovxgs4 dfoiqe s3tumv zg4ylm a4ukdd jqov6j eqdpu2 24qcci z5kf6l 7pddi5 7c6zkz 767tk2 gzk4jy 5bhc5d quim7e 5mz7q
+# 
+# 
+# DemolabJUNOS862042208 aeaqic agaj34 xzonkm fq4nbu gqydam rqgiwt qmjymn jqyeck ovxgs4 dfoiqe s3tumv zg4ylm a4umit 7zr4f6 jdkng2 invfvv 2fndxa pkwygk kynigb oeq2cc odgkzt rgqgd5 icdwr6 2db7q
+# 
+# 
+# JUNOS1020673 aeaqib qbo4fq 4ojrg4 ztaqjq gaztcn zzg43a ycsmif bgu5lo nfygk4 qhfb5q yckib7 jailid xffnni jio4aq 353zji narsuq st4rtp zdixqp bfwktg bxh2ka lyh7c
+## Last commit: 2024-08-13 05:38:43 PDT by dtsai
+version 20.4R3-S7.2;
+groups {
+    top {
+        system {
+            name-server {
+                1.0.0.1;
+                8.8.4.4;
+            }
+            ntp {
+                server 132.163.97.4;
+                server 194.58.207.14;
+                server 192.12.19.20;
+            }
+        }
+        services {
+            rpm {
+                probe INTERNET1 {
+                    test wan_ping {
+                        probe-type icmp-ping;
+                        target address 8.8.8.8;
+                        probe-count 3;
+                        probe-interval 5;
+                        test-interval 30;
+                        routing-instance INTERNET1;
+                        thresholds {
+                            successive-loss 2;
+                            total-loss 2;
+                        }
+                        hardware-timestamp;
+                    }
+                }
+                probe INTERNET2 {
+                    test wan_ping {
+                        probe-type icmp-ping;
+                        target address 8.8.8.8;
+                        probe-count 3;
+                        probe-interval 5;
+                        test-interval 30;
+                        routing-instance INTERNET2;
+                        thresholds {
+                            successive-loss 2;
+                            total-loss 2;
+                        }
+                        hardware-timestamp;
+                    }
+                }
+            }
+            ip-monitoring {
+                policy INTERNET1_down {
+                    match {
+                        rpm-probe INTERNET1;
+                    }
+                    then {
+                        preferred-route {
+                            routing-instances INTERNET1 {
+                                route 100.99.255.2/32 {
+                                    discard;
+                                }
+                            }
+                        }
+                    }
+                }
+                policy INTERNET2_down {
+                    match {
+                        rpm-probe INTERNET2;
+                    }
+                    then {
+                        preferred-route {
+                            routing-instances INTERNET2 {
+                                route 100.99.255.2/32 {
+                                    discard;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        interfaces {
+            lo0 {
+                unit 0 {
+                    family inet {
+                        address 100.100.0.6/32;
+                    }
+                }
+            }
+        }
+        forwarding-options {
+            storm-control-profiles default {
+                all;
+            }
+        }
+        policy-options {
+            policy-statement ecmp_policy {
+                then {
+                    load-balance per-packet;
+                    accept;
+                }
+            }
+            policy-statement host_to_wan {
+                term 01_lo0 {
+                    from {
+                        instance master;
+                        route-filter 100.100.0.6/32 exact;
+                    }
+                    then accept;
+                }
+            }
+            policy-statement MGMT_direct {
+                term 01_direct {
+                    from {
+                        instance MGMT;
+                        protocol direct;
+                    }
+                    then accept;
+                }
+                term 02_not_direct {
+                    from instance MGMT;
+                    then reject;
+                }
+            }
+            policy-statement VMKERNEL_direct {
+                term 01_direct {
+                    from {
+                        instance VMKERNEL;
+                        protocol direct;
+                    }
+                    then accept;
+                }
+                term 02_not_direct {
+                    from instance VMKERNEL;
+                    then reject;
+                }
+            }
+            policy-statement DEFAULT_direct {
+                term 01_direct {
+                    from {
+                        instance DEFAULT;
+                        protocol direct;
+                    }
+                    then accept;
+                }
+                term 02_not_direct {
+                    from instance DEFAULT;
+                    then reject;
+                }
+            }
+            policy-statement wan_default {
+                term 01_INTERNET1_down {
+                    from {
+                        instance INTERNET1;
+                        route-filter 0.0.0.0/0 exact;
+                        condition INTERNET1_down;
+                    }
+                    then reject;
+                }
+                term 02_INTERNET1_default {
+                    from {
+                        instance INTERNET1;
+                        route-filter 0.0.0.0/0 exact;
+                    }
+                    then accept;
+                }
+                term 03_INTERNET1_cleanup {
+                    from {
+                        instance INTERNET1;
+                        protocol [ direct local ];
+                    }
+                    then reject;
+                }
+                term 04_INTERNET2_down {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                        condition INTERNET2_down;
+                    }
+                    then reject;
+                }
+                term 05_INTERNET2_default {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                    }
+                    then accept;
+                }
+                term 06_INTERNET2_cleanup {
+                    from {
+                        instance INTERNET2;
+                        protocol [ direct local ];
+                    }
+                    then reject;
+                }
+            }
+            policy-statement apbr_INTERNET_wan {
+                term 01_INTERNET1_down {
+                    from {
+                        instance INTERNET1;
+                        route-filter 0.0.0.0/0 exact;
+                        condition INTERNET1_down;
+                    }
+                    then reject;
+                }
+                term 02_INTERNET1_default {
+                    from {
+                        instance INTERNET1;
+                        route-filter 0.0.0.0/0 exact;
+                    }
+                    then accept;
+                }
+                term 03_INTERNET1_cleanup {
+                    from {
+                        instance INTERNET1;
+                        protocol [ direct local ];
+                    }
+                    then reject;
+                }
+                term 04_INTERNET2_down {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                        condition INTERNET2_down;
+                    }
+                    then reject;
+                }
+                term 05_INTERNET2_default {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                    }
+                    then accept;
+                }
+                term 06_INTERNET2_cleanup {
+                    from {
+                        instance INTERNET2;
+                        protocol [ direct local ];
+                    }
+                    then reject;
+                }
+            }
+            policy-statement apbr_ISP2_wan {
+                term 01_INTERNET2_down {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                        condition INTERNET2_down;
+                    }
+                    then reject;
+                }
+                term 02_INTERNET2_default {
+                    from {
+                        instance INTERNET2;
+                        route-filter 0.0.0.0/0 exact;
+                    }
+                    then {
+                        preference 200;
+                        accept;
+                    }
+                }
+                term 03_INTERNET2_cleanup {
+                    from {
+                        instance INTERNET2;
+                        protocol [ direct local ];
+                    }
+                    then reject;
+                }
+            }
+            condition INTERNET1_down {
+                if-route-exists {
+                    address-family {
+                        inet {
+                            100.99.255.2/32;
+                            table INTERNET1.inet.0;
+                        }
+                    }
+                }
+            }
+            condition INTERNET2_down {
+                if-route-exists {
+                    address-family {
+                        inet {
+                            100.99.255.2/32;
+                            table INTERNET2.inet.0;
+                        }
+                    }
+                }
+            }
+        }
+        routing-instances {
+            INTERNET1 {
+                routing-options {
+                    instance-import [ DEFAULT_direct MGMT_direct VMKERNEL_direct host_to_wan ];
+                }
+                interface ge-0/0/0.0;
+                instance-type virtual-router;
+            }
+            INTERNET2 {
+                routing-options {
+                    instance-import [ DEFAULT_direct MGMT_direct VMKERNEL_direct host_to_wan ];
+                }
+                interface ge-0/0/1.0;
+                instance-type virtual-router;
+            }
+            MGMT {
+                routing-options {
+                    instance-import wan_default;
+                }
+                interface ge-0/0/2.196;
+                instance-type virtual-router;
+                system {
+                    services {
+                        dhcp-local-server {
+                            group IRV82-LANMGMT_DT {
+                                interface ge-0/0/2.196;
+                            }
+                            requested-ip-interface-match;
+                        }
+                    }
+                }
+                access {
+                    address-assignment {
+                        pool IRV82-LANMGMT_DT {
+                            family inet {
+                                network 198.18.252.0/24;
+                                range IRV82-LANMGMT_DT {
+                                    low 198.18.252.64;
+                                    high 198.18.252.128;
+                                }
+                                dhcp-attributes {
+                                    name-server {
+                                        1.0.0.2;
+                                    }
+                                    router {
+                                        198.18.252.1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            VMKERNEL {
+                routing-options {
+                    instance-import wan_default;
+                }
+                interface ge-0/0/2.198;
+                instance-type virtual-router;
+                system {
+                    services {
+                        dhcp-local-server {
+                            group IRV82-VMKERNEL_DT {
+                                interface ge-0/0/2.198;
+                            }
+                            requested-ip-interface-match;
+                        }
+                    }
+                }
+                access {
+                    address-assignment {
+                        pool IRV82-VMKERNEL_DT {
+                            family inet {
+                                network 198.18.254.0/24;
+                                range IRV82-VMKERNEL_DT {
+                                    low 198.18.254.64;
+                                    high 198.18.254.128;
+                                }
+                                dhcp-attributes {
+                                    name-server {
+                                        1.0.0.2;
+                                    }
+                                    router {
+                                        198.18.254.1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            DEFAULT {
+                routing-options {
+                    instance-import wan_default;
+                }
+                interface ge-0/0/2.199;
+                instance-type virtual-router;
+                system {
+                    services {
+                        dhcp-local-server {
+                            group IRV82-LANDEFAULT_DT {
+                                interface ge-0/0/2.199;
+                            }
+                            requested-ip-interface-match;
+                        }
+                    }
+                }
+                access {
+                    address-assignment {
+                        pool IRV82-LANDEFAULT_DT {
+                            family inet {
+                                network 198.18.255.0/24;
+                                range IRV82-LANDEFAULT_DT {
+                                    low 198.18.255.64;
+                                    high 198.18.255.128;
+                                }
+                                dhcp-attributes {
+                                    name-server {
+                                        1.0.0.2;
+                                    }
+                                    router {
+                                        198.18.255.1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            apbr_INTERNET {
+                routing-options {
+                    instance-import apbr_INTERNET_wan;
+                }
+                instance-type forwarding;
+            }
+            apbr_ISP2 {
+                routing-options {
+                    instance-import apbr_ISP2_wan;
+                }
+                instance-type forwarding;
+            }
+        }
+        applications {
+            application tcp_443 {
+                protocol tcp;
+                destination-port 443;
+            }
+            application tcp_2200 {
+                protocol tcp;
+                destination-port 2200;
+            }
+            application tcp_6514 {
+                protocol tcp;
+                destination-port 6514;
+            }
+        }
+        routing-options {
+            router-id 100.100.0.6;
+            instance-import wan_default;
+            forwarding-table {
+                export ecmp_policy;
+            }
+        }
+    }
+    INTERNET1;
+    INTERNET2;
+    INTERFACE_BACKBONE_DEFAULTS {
+        interfaces {
+            "<[aegx][et]*>" {
+                mtu 9000;
+            }
+        }
+    }
+    STANDARD {
+        security { /* ACCESS-DENIED */ };
+    }
+}
+apply-groups top;
+system {
+    host-name vSRX-GW1;
+    root-authentication { /* ACCESS-DENIED */ };
+    commit synchronize;
+    scripts { /* ACCESS-DENIED */ };
+    login { /* ACCESS-DENIED */ };
+    services {
+        ssh {
+            root-login /* ACCESS-DENIED */;
+            protocol-version /* ACCESS-DENIED */;
+            rate-limit 2;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    domain-name none.local;
+    domain-search none.local;
+    time-zone America/Los_Angeles;
+    arp {
+        passive-learning;
+        purging;
+        gratuitous-arp-on-ifup;
+    }
+    authentication-order password;
+    name-server {
+        8.8.8.8;
+        8.8.4.4;
+        208.67.222.222;
+        208.67.222.220;
+    }
+    radius-server {
+        inactive: 10.200.1.250 {
+            secret /* SECRET-DATA */; ## SECRET-DATA
+            timeout 1;
+            retry 2;
+            source-address 198.51.100.1;
+        }
+        inactive: 10.201.17.254 {
+            secret /* SECRET-DATA */; ## SECRET-DATA
+            timeout 1;
+            retry 2;
+            source-address 198.51.100.1;
+        }
+    }
+    syslog {
+        archive size 256k files 3;
+        user * {
+            any emergency;
+        }
+        host 198.18.0.250 {
+            any info;
+            port 514;
+        }
+        file POLICY-DENIED-TRAFFIC {
+            user info;
+            match RT_FLOW_SESSION_DENY;
+            archive size 1m files 3 world-readable;
+        }
+        file interface_status {
+            daemon info;
+            match "(SNMP_TRAP_LINK_UP|SNMP_TRAP_LINK_DOWN)";
+            archive size 200k files 3 world-readable;
+            explicit-priority;
+        }
+        file messages {
+            any critical;
+            authorization info;
+        }
+        file utm-log {
+            any any;
+            match RT_UTM;
+        }
+        time-format year;
+        source-address 198.51.100.1;
+    }
+    max-configurations-on-flash 30;
+    ##
+    ## Warning: statement ignored: unsupported platform (vsrx)
+    ##
+    max-configuration-rollbacks 30;
+    license {
+        autoupdate {
+            url https://ae1.juniper.net/junos/key_retrieval;
+        }
+    }
+}
+services {
+    application-identification {
+        download {
+            url https://signatures.juniper.net/cgi-bin/index.cgi;
+            automatic {
+                start-time 2022-10-20.10:00:00;
+                interval 48;
+            }
+        }
+    }
+    ip-monitoring {
+        traceoptions {
+            file ip-monitoring size 1m files 3;
+            flag event;
+        }
+    }
+}
+security { /* ACCESS-DENIED */ };
+interfaces {
+    apply-groups INTERFACE_BACKBONE_DEFAULTS;
+    interface-range INTERNET1 {
+        member ge-0/0/0;
+        apply-groups INTERNET1;
+    }
+    interface-range INTERNET2 {
+        member ge-0/0/1;
+        apply-groups INTERNET2;
+    }
+    ge-0/0/0 {
+        per-unit-scheduler;
+        unit 0 {
+            family inet {
+                dhcp {
+                    retransmission-attempt 60;
+                    retransmission-interval 60;
+                    vendor-id VSRX-FW0;
+                    force-discover;
+                }
+            }
+        }
+    }
+    lt-0/0/0 {
+        unit 0 {
+            encapsulation ethernet;
+            peer-unit 1;
+            family inet {
+                address 169.254.254.1/30;
+            }
+        }
+        unit 1 {
+            encapsulation ethernet;
+            peer-unit 0;
+            family inet {
+                address 169.254.254.2/30;
+            }
+        }
+    }
+    ge-0/0/1 {
+        per-unit-scheduler;
+        unit 0 {
+            family inet {
+                dhcp {
+                    retransmission-attempt 60;
+                    vendor-id Juniper;
+                    force-discover;
+                }
+            }
+        }
+    }
+    ge-0/0/2 {
+        per-unit-scheduler;
+        flexible-vlan-tagging;
+        unit 196 {
+            description IRV82-LANMGMT_DT;
+            vlan-id 196;
+            family inet {
+                address 198.18.252.1/24;
+            }
+        }
+        unit 197 {
+            description IRV82-LANPRIVATE_DT;
+            vlan-id 197;
+            family inet {
+                address 198.18.253.2/24;
+            }
+        }
+        unit 198 {
+            description IRV82-VMKERNEL_DT;
+            vlan-id 198;
+            family inet {
+                address 198.18.254.2/24;
+            }
+        }
+        unit 199 {
+            description IRV82-LANDEFAULT_DT;
+            vlan-id 199;
+            family inet {
+                address 198.18.255.1/24;
+            }
+        }
+    }
+    ge-0/0/6 {
+        mtu 9000;
+        unit 0 {
+            family inet {
+                mtu 8100;
+                address 192.0.3.1/30;
+            }
+        }
+    }
+    fxp0 {
+        unit 0 {
+            family inet {
+                dhcp;
+            }
+        }
+    }
+    st0 {
+        unit 0 {
+            description "VPN TUNNEL TO TP1-SRX300-G11";
+            family inet {
+                address 169.254.253.1/24;
+            }
+        }
+    }
+}
+snmp {
+    location "IRVINE, CA";
+    contact "dt@siriuspackets.com";
+    filter-interfaces {
+        all-internal-interfaces;
+    }
+    v3 {
+        usm {
+            local-engine {
+                user monitoruser {
+                    authentication-sha {
+                        authentication-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                    privacy-aes128 {
+                        privacy-key /* SECRET-DATA */; ## SECRET-DATA
+                    }
+                }
+            }
+        }
+        vacm {
+            security-to-group {
+                security-model usm {
+                    security-name monitoruser {
+                        group ro-group;
+                    }
+                }
+            }
+            access {
+                group ro-group {
+                    default-context-prefix {
+                        security-model usm {
+                            security-level privacy {
+                                read-view all;
+                                write-view all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    view all {
+        oid .1 include;
+    }
+    health-monitor {
+        interval 300;
+        rising-threshold 90;
+        falling-threshold 80;
+    }
+}
+class-of-service {
+    classifiers {
+        dscp eQOS-DSCP-BA {
+            forwarding-class VOICE-VIDEO {
+                loss-priority low code-points [ DSCP-EF-AUDIO DSCP-EF-SIGNAL ];
+            }
+            forwarding-class 500M-BW {
+                loss-priority low code-points DSCP-NC;
+                loss-priority high code-points DSCP-NC2;
+            }
+            forwarding-class 200M-BW {
+                loss-priority low code-points DSCP-AF41;
+                loss-priority high code-points DSCP-AF23;
+            }
+            forwarding-class BEST-EFFORT {
+                loss-priority high code-points DSCP-BE;
+            }
+        }
+    }
+    code-point-aliases {
+        dscp {
+            DSCP-EF-AUDIO 101110;
+            DSCP-EF-SIGNAL 011000;
+            DSCP-AF41 100010;
+            DSCP-AF23 010110;
+            DSCP-NC 110110;
+            DSCP-NC2 111111;
+            DSCP-BE 000000;
+        }
+    }
+    drop-profiles {
+        AF_LOW_DROP {
+            fill-level 90 drop-probability 10;
+            fill-level 95 drop-probability 20;
+            fill-level 100 drop-probability 100;
+        }
+        AF_HIGH_DROP {
+            fill-level 75 drop-probability 25;
+            fill-level 85 drop-probability 50;
+            fill-level 95 drop-probability 100;
+        }
+        NC_LOW_DROP {
+            fill-level 95 drop-probability 5;
+            fill-level 100 drop-probability 100;
+        }
+        NC_HIGH_DROP {
+            fill-level 75 drop-probability 35;
+            fill-level 85 drop-probability 85;
+            fill-level 90 drop-probability 100;
+        }
+    }
+    forwarding-classes {
+        queue 4 50M-BW;
+        queue 5 150M-BW;
+        queue 0 BEST-EFFORT;
+        queue 1 VOICE-VIDEO;
+        queue 2 200M-BW;
+        queue 3 500M-BW;
+    }
+    interfaces {
+        ge-0/0/0 {
+            unit * {
+                scheduler-map eQOS-WEWORK-SCHED-MAP;
+                shaping-rate 1g;
+                classifiers {
+                    dscp eQOS-DSCP-BA;
+                }
+                rewrite-rules {
+                    dscp eQOS-DSCP-RW;
+                }
+            }
+        }
+        ge-0/0/1 {
+            unit * {
+                scheduler-map eQOS-WEWORK-SCHED-MAP;
+                shaping-rate 1g;
+                classifiers {
+                    dscp eQOS-DSCP-BA;
+                }
+                rewrite-rules {
+                    dscp eQOS-DSCP-RW;
+                }
+            }
+        }
+        ge-0/0/2 {
+            unit * {
+                scheduler-map eQOS-WEWORK-SCHED-MAP;
+                shaping-rate 1g;
+                classifiers {
+                    dscp eQOS-DSCP-BA;
+                }
+                rewrite-rules {
+                    dscp eQOS-DSCP-RW;
+                }
+            }
+        }
+    }
+    rewrite-rules {
+        dscp eQOS-DSCP-RW {
+            forwarding-class 200M-BW {
+                loss-priority low code-point DSCP-AF41;
+                loss-priority high code-point DSCP-AF23;
+            }
+            forwarding-class 500M-BW {
+                loss-priority low code-point DSCP-NC;
+                loss-priority high code-point DSCP-NC2;
+            }
+            forwarding-class BEST-EFFORT {
+                loss-priority high code-point DSCP-BE;
+            }
+            forwarding-class VOICE-VIDEO {
+                loss-priority low code-point DSCP-EF-AUDIO;
+            }
+        }
+    }
+    scheduler-maps {
+        eQOS-WEWORK-SCHED-MAP {
+            forwarding-class VOICE-VIDEO scheduler VOICE-VIDEO-SCHED;
+            forwarding-class 500M-BW scheduler 500M-SCHED;
+            forwarding-class 200M-BW scheduler 200M-SCHED;
+            forwarding-class BEST-EFFORT scheduler BEST-EFFORT-SCHED;
+            forwarding-class 50M-BW scheduler 50M-SCHED;
+            forwarding-class 150M-BW scheduler 150M-SCHED;
+        }
+    }
+    schedulers {
+        VOICE-VIDEO-SCHED {
+            transmit-rate percent 20;
+            buffer-size percent 20;
+            priority high;
+        }
+        500M-SCHED {
+            shaping-rate 500m;
+            buffer-size percent 15;
+            priority medium-low;
+        }
+        BEST-EFFORT-SCHED {
+            transmit-rate {
+                remainder;
+            }
+            buffer-size {
+                remainder;
+            }
+            priority low;
+        }
+        50M-SCHED {
+            shaping-rate 50m;
+            priority medium-low;
+        }
+        150M-SCHED {
+            shaping-rate 150m;
+            priority medium-low;
+        }
+        200M-SCHED {
+            shaping-rate 200m;
+            priority medium-low;
+        }
+    }
+}
+firewall {
+    family inet {
+        filter FW-DEDICATED-BW-150M {
+            term priority {
+                from {
+                    dscp [ ef cs3 af41 cs5 cs6 cs7 ];
+                }
+                then {
+                    count CT-DEDICATED-BW-150M-PRIORITY;
+                    forwarding-class VOICE-VIDEO;
+                    accept;
+                }
+            }
+            term default {
+                then {
+                    forwarding-class 150M-BW;
+                    accept;
+                }
+            }
+        }
+        filter FW-DEDICATED-BW-500M {
+            term priority {
+                from {
+                    dscp [ ef cs3 af41 cs5 cs6 cs7 ];
+                }
+                then {
+                    count CT-DEDICATED-BW-150M-PRIORITY;
+                    forwarding-class VOICE-VIDEO;
+                    accept;
+                }
+            }
+            term default {
+                then {
+                    forwarding-class 150M-BW;
+                    accept;
+                }
+            }
+        }
+        filter FW-DEDICATED-BW-50M {
+            term default {
+                then {
+                    forwarding-class 50M-BW;
+                    accept;
+                }
+            }
+        }
+    }
+    policer global_60m {
+        if-exceeding {
+            bandwidth-limit 60m;
+            burst-size-limit 1m;
+        }
+        then discard;
+    }
+    filter Global-Profile-IN {
+        term DO-POLICE {
+            from {
+                source-address {
+                    0.0.0.0/0;
+                }
+                destination-address {
+                    0.0.0.0/0;
+                }
+            }
+            then {
+                policer global_60m;
+                accept;
+            }
+        }
+    }
+    filter Global-Profile-OUT {
+        term DO-POLICE {
+            from {
+                source-address {
+                    0.0.0.0/0;
+                }
+                destination-address {
+                    0.0.0.0/0;
+                }
+            }
+            then {
+                policer global_60m;
+                accept;
+            }
+        }
+    }
+}
+routing-instances {
+    DEFAULT {
+        routing-options {
+            static {
+                route 198.18.252.0/23 next-hop 169.254.254.1;
+            }
+        }
+        interface lt-0/0/0.1;
+    }
+    INTERNET2 {
+        interface ge-0/0/2.197;
+        system {
+            services {
+                dhcp-local-server {
+                    group IRV82-LANPRIVATE_DT {
+                        interface ge-0/0/2.197;
+                    }
+                    requested-ip-interface-match;
+                }
+            }
+        }
+        access {
+            address-assignment {
+                pool IRV82-LANPRIVATE_DT {
+                    family inet {
+                        network 198.18.253.0/24;
+                        range IRV82-LANPRIVATE_DT {
+                            low 198.18.253.64;
+                            high 198.18.253.128;
+                        }
+                        dhcp-attributes {
+                            name-server {
+                                1.0.0.2;
+                            }
+                            router {
+                                198.18.253.1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    MGMT {
+        routing-options {
+            static {
+                route 198.18.0.0/22 next-hop st0.0;
+                route 198.18.255.0/24 next-hop 169.254.254.2;
+            }
+        }
+        interface lt-0/0/0.0;
+        interface st0.0;
+        access {
+            address-assignment {
+                pool IRV82-LANMGMT_DT {
+                    family inet {
+                        dhcp-attributes {
+                            option 43 hex-string 0104C612FCFA;
+                            option 60 string ArubaAP;
+                        }
+                        host 82SWF-AP-D {
+                            hardware-address 9c:8c:d8:cf:ef:06;
+                            ip-address 198.18.252.253;
+                        }
+                        host 82SWF-AP-U {
+                            hardware-address d0:d3:e0:c0:90:ed;
+                            ip-address 198.18.252.252;
+                        }
+                        host IDFSW1 {
+                            hardware-address 08:05:e2:3b:47:6b;
+                            ip-address 198.18.252.6;
+                        }
+                        host MDFSW1 {
+                            hardware-address 3c:8c:93:94:81:2a;
+                            ip-address 198.18.252.5;
+                        }
+                        host IDFSW3 {
+                            hardware-address 04:5c:6c:03:ab:a1;
+                            ip-address 198.18.252.8;
+                        }
+                        host IDFSW2 {
+                            hardware-address 0c:59:9c:71:8e:d3;
+                            ip-address 198.18.252.7;
+                        }
+                        host HP-ILO1 {
+                            hardware-address 10:60:4b:b0:79:fc;
+                            ip-address 198.18.252.113;
+                        }
+                        host HP-ILO2 {
+                            hardware-address 3c:a8:2a:1b:cb:54;
+                            ip-address 198.18.252.114;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+protocols {
+    lldp {
+        port-id-subtype interface-name;
+        port-description-type interface-alias;
+        interface all;
+    }
+    lldp-med {
+        interface all;
+    }
+}
+routing-options {
+    forwarding-table {
+        export ecmp_policy;
+    }
+}
