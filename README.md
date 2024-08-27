@@ -6,7 +6,7 @@ Sample configurations for setting up the oxidized plugin in librenms setup.
 
 This included the integration of the network device monitoring systems and syslog.
 
-We have update the configs as per the device type we use.
+We have updated the configs according to the device type we use.
 
 juniper: junos
 
