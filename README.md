@@ -13,5 +13,3 @@ juniper: junos
 cisco: ios
 
 fortigate: fortios
-
-
