@@ -1,0 +1,11 @@
+#This is explicitly for GitLab CE CICD configurations
+
+stages:
+  - test
+
+runner-test-job:
+  stage: test
+  script:
+    - echo "Runner is working!"
+  tags:
+    - oxidized
