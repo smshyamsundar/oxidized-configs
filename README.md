@@ -11,7 +11,5 @@ This included the integration of the network device monitoring systems and syslo
 We have updated the configs according to the device type we use.
 
 juniper: junos
-
 cisco: ios
-
 fortigate: fortios
