@@ -8,6 +8,6 @@ stages:
 runner-test-job:
   stage: test
   script:
-    - echo "Runner is working"
+    - echo "Runner is working as expected"
   tags:
     - oxidized
