@@ -24,3 +24,6 @@ panOS: panos
 
 Mikrotik: routeros
 
+Cisco WLC: aireos
+
+Opengear: opengear
