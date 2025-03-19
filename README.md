@@ -17,3 +17,5 @@ juniper: junos
 cisco: ios
 
 fortigate: fortios
+
+Cisco NX-OS: nxos
