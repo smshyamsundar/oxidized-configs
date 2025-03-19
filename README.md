@@ -21,3 +21,5 @@ fortigate: fortios
 Cisco NX-OS: nxos
 
 panOS: panos
+
+Cisco WLC: aireos
