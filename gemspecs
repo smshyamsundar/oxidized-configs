@@ -1,4 +1,5 @@
 Gem::Specification.new do |s|
+
   s.name              = 'oxidized'
   s.version           = Oxidized::VERSION
   s.licenses          = %w[Apache-2.0]
