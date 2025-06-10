@@ -1,4 +1,4 @@
-Oxidized is a devicenetwork configuration backup tool.
+Oxidized is a device network configuration backup tool.
 
 We also have the GitLab CE yaml configs. 
 
