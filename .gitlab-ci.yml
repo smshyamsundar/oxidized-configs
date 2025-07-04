@@ -1,4 +1,4 @@
-# This is explicitly for GitLab CE CICD configuration
+# This is explicitly for GitLab CE CICD configurations
 
 stages:
   - test
