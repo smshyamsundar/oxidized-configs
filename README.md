@@ -4,7 +4,7 @@ We also have the GitLab CE yaml configs.
 
 It is light and extensible and supports over 130 operating system types.
 
-Sample configurations for setting up the oxidized plugin in librenms setup.
+Sample configurations for setting up the oxidized plugin in Librenms setup.
 
 This included the integration of the network device monitoring systems and syslog.
 
